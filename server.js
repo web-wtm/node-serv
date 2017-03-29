@@ -6,7 +6,7 @@ var index = require('./routes/index');
 var tasks = require('./routes/tasks');
 
 var app = express();
-var PORT = 5000;
+var PORT = 3000;
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -20,6 +20,4 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use('/', index);
 app.use('/api', tasks);
 
-app.listen(PORT, function() {
-    console.log('Server has started on port: ' + PORT);
-})
+app.listen(PORT, () => console.log(`Server has started on port: ${PORT}`));
